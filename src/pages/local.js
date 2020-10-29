@@ -1,10 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
 
-const IndexPage = () => (
+const LocalPage = () => (
   <Layout>
-    <h1>Hello World!</h1>
+    <h1>Local content</h1>
   </Layout>
 )
 
-export default IndexPage
+export default LocalPage

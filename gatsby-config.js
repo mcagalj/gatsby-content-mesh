@@ -3,14 +3,44 @@ module.exports = {
     title: `Gatsby Content Mesh by Example`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    navbar: [
+      {
+        text: "Home",
+        path: "/",
+      },
+      {
+        text: "Local content",
+        path: "/local",
+      },
+      {
+        text: "Airtable content",
+        path: "/airtable",
+      },
+      {
+        text: "Contentful content",
+        path: "/contentful",
+      },
+      {
+        text: "Google Sheet content",
+        path: "/googles-sheet",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
       },
     },
     `gatsby-transformer-sharp`,

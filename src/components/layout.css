@@ -51,13 +51,21 @@ template {
   display: none;
 }
 a {
+  color: rebeccapurple;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  padding: 0.25rem;
 }
+
+a.active,
 a:active,
 a:hover {
+  color: white;
   outline-width: 0;
+  background-color: rebeccapurple;
 }
+
 abbr[title] {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
   cursor: help;
