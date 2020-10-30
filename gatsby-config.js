@@ -28,9 +28,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-json`,
-    `gatsby-transformer-yaml`,
     `gatsby-plugin-postcss`,
+    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

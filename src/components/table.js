@@ -19,10 +19,17 @@ const Table = ({ headers, data }) => (
         return (
           <tr key={item.id} className={`${index % 2 ? "bg-purple-100" : ""}`}>
             <td className="py-3 px-2">{item.project}</td>
-            <td className="w-1/5 text-left py-3 px-2">
+            <td className="text-left py-3 px-2">
               {item.students.map(student => (
                 <div key={student.student} className="mr-4">
-                  {student.student}
+                  <div className="flex">
+                    <img
+                      src={item.image.childImageSharp.fixed.src}
+                      alt="Student"
+                      className="mb-2"
+                    />{" "}
+                    {student.student}
+                  </div>
                 </div>
               ))}
             </td>

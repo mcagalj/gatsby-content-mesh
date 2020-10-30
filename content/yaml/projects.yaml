@@ -7,6 +7,7 @@
   links:
     github: https://github.com/student-1/hci-project
     production: https://student-1.netlify.app 
+  image: ../../src/images/unnamed.png
 - project: Project 2
   students:
     - student: Student 3
@@ -16,4 +17,5 @@
   links:
     github: https://github.com/student-2/hci-project
     production: https://student-2.netlify.app 
+  image: ../../src/images/unnamed.png
 

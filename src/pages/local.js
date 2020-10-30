@@ -14,10 +14,10 @@ const LocalPage = ({ data }) => {
         <h3 className="font-light">Content from YAML files</h3>
         <Table
           headers={[
-            { name: "Project", width: "w-1/5" },
-            { name: "Students", width: "w-1/5" },
-            { name: "Description", width: "w-2/5" },
-            { name: "Links", width: "w-1/5" },
+            { name: "Project", width: "w-2/12" },
+            { name: "Students", width: "w-3/12" },
+            { name: "Description", width: "w-5/12" },
+            { name: "Links", width: "w-2/12" },
           ]}
           data={yamlData}
         />
@@ -41,6 +41,14 @@ export const query = graphql`
         links {
           github
           production
+        }
+        image {
+          childImageSharp {
+            fixed(width: 50) {
+              src
+              originalName
+            }
+          }
         }
       }
     }
