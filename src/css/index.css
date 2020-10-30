@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply font-sans;
+}
+
 a {
   @apply no-underline text-purple-700 text-lg p-2 mr-2 font-sans;
 }

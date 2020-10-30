@@ -1,0 +1,19 @@
+- project: Project 1
+  students:
+    - student: Student 1
+    - student: Student 2
+  description:
+    This is a semester project for the course on Human Computer Interaction.
+  links:
+    github: https://github.com/student-1/hci-project
+    production: https://student-1.netlify.app 
+- project: Project 2
+  students:
+    - student: Student 3
+    - student: Student 4
+  description:
+    This is a semester project for the course on Human Computer Interaction.
+  links:
+    github: https://github.com/student-2/hci-project
+    production: https://student-2.netlify.app 
+
