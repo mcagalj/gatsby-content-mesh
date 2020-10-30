@@ -1,0 +1,50 @@
+[
+  {
+    "project": "Project 3",
+    "students": [
+      {
+        "student": "Student 5"
+      },
+      {
+        "student": "Student 6"
+      }
+    ],
+    "description": "This is a semester project for the course on Human Computer Interaction.",
+    "links": {
+      "production": "https://student-1.netlify.app",
+      "github": "https://github.com/student-1/hci-project"
+    },
+    "image": "../../src/images/unnamed.png"
+  },
+  {
+    "project": "Project 4",
+    "students": [
+      {
+        "student": "Student 7"
+      },
+      {
+        "student": "Student 8"
+      }
+    ],
+    "description": "This is a semester project for the course on Human Computer Interaction.",
+    "links": {
+      "production": "https://student-2.netlify.app",
+      "github": "https://github.com/student-2/hci-project"
+    },
+    "image": "../../src/images/unnamed.png"
+  },
+  {
+    "project": "Project 5",
+    "students": [
+      {
+        "student": "Student 7"
+      }
+    ],
+    "description": "This is a semester project for the course on Human Computer Interaction.",
+    "links": {
+      "production": "https://student-2.netlify.app",
+      "github": "https://github.com/student-2/hci-project"
+    },
+    "image": "../../src/images/unnamed.png"
+  }
+]
