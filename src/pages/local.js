@@ -1,21 +1,25 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Title from "../components/title"
 
 const LocalPage = ({ data }) => {
   const { nodes: jsonData } = data.json
   return (
     <Layout>
-      <h1>Local content</h1>
-      <h2>Content from JSON files</h2>
-      <ol>
-        {jsonData.map(item => {
-          return (
-            <li>
-              {item.message} -- {item.author}
-            </li>
-          )
-        })}
-      </ol>
+      <Title>Local content</Title>
+      <section className="border-gray-500">
+        <h3 className="font-light">Content from JSON files</h3>
+        <ol className="list-decimal">
+          {jsonData.map(item => {
+            return (
+              <li>
+                {item.message} -- {item.author}
+              </li>
+            )
+          })}
+        </ol>
+      </section>
     </Layout>
   )
 }

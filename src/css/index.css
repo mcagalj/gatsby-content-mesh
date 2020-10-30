@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  @apply no-underline text-purple-700 text-lg p-2 mr-2 font-sans;
+}
+
+a:hover,
+a.active {
+  @apply text-white bg-purple-700;
+}
