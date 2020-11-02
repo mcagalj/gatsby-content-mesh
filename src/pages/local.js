@@ -11,7 +11,7 @@ const LocalPage = ({ data }) => {
   const { frontmatter: mdFrontmatter } = data.markdown
   const { image: mdImage } = data.markdown.frontmatter
   const { body: mdBody } = data.markdown
-  const { nodes: dbUsers } = data.db.allUsers
+  const { nodes: dbUsers } = data.db.allUsers || {}
   //   const { nodes: yamlData } = data.yaml
   return (
     <Layout>
@@ -44,26 +44,27 @@ const LocalPage = ({ data }) => {
         <h3 className="font-light text-red-500">
           Content from (PostgreSQL) database
         </h3>
-        {dbUsers.map(user => {
-          const {
-            username,
-            medicalTestsByUserId: { nodes: tests },
-          } = user
-          const testsList = tests.map(test => (
-            <li key={test.id}>
-              {test.name}{" "}
-              <span className="text-gray-500">({test.timestamp})</span>
-            </li>
-          ))
-          return (
-            <div key={user.id}>
-              <h3 className="font-semibold mt-4 mb-1 text-purple-700">
-                {username}
-              </h3>
-              <ol className="list-decimal">{testsList}</ol>
-            </div>
-          )
-        })}
+        {dbUsers &&
+          dbUsers.map(user => {
+            const {
+              username,
+              medicalTestsByUserId: { nodes: tests },
+            } = user
+            const testsList = tests.map(test => (
+              <li key={test.id}>
+                {test.name}{" "}
+                <span className="text-gray-500">({test.timestamp})</span>
+              </li>
+            ))
+            return (
+              <div key={user.id}>
+                <h3 className="font-semibold mt-4 mb-1 text-purple-700">
+                  {username}
+                </h3>
+                <ol className="list-decimal">{testsList}</ol>
+              </div>
+            )
+          })}
       </section>
     </Layout>
   )
