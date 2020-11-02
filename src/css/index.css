@@ -7,7 +7,7 @@
 }
 
 a {
-  @apply no-underline text-purple-700 text-lg p-2 mr-2 font-sans;
+  @apply no-underline text-purple-700 text-lg p-2 mr-2;
 }
 
 a:hover,

@@ -8,7 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { MDXProvider } from "@mdx-js/react"
+import components from "./mdx-components"
 import Header from "./header"
 import "./layout.css"
 
@@ -36,7 +37,9 @@ const Layout = ({ children }) => {
         }}
       >
         <Navbar />
-        <main>{children}</main>
+        <main>
+          <MDXProvider components={components}>{children}</MDXProvider>
+        </main>
       </div>
     </>
   )
