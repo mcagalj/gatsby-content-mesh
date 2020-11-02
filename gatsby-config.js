@@ -72,6 +72,17 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: "POSTGRES",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "postgres",
+        // Url to query from
+        url: "http://localhost:5000/graphql",
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
