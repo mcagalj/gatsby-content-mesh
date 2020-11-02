@@ -21,7 +21,6 @@ const AirtablePage = ({ data }) => {
           <div className="p-2 text-center w-1/12 text-white bg-purple-700 border rounded-lg overflow-hidden">
             {product.data.price} $
           </div>
-          <div></div>
           <div className="p-2 text-center w-2/12 text-white bg-orange-500 border rounded-lg overflow-hidden">
             {product.data.categories}
           </div>
