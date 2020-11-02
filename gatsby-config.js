@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Content Mesh by Example`,
@@ -22,7 +24,7 @@ module.exports = {
       },
       {
         text: "Google Sheet content",
-        path: "/googles-sheet",
+        path: "/google-sheet",
       },
     ],
   },
@@ -81,6 +83,24 @@ module.exports = {
         fieldName: "postgres",
         // Url to query from
         url: "http://localhost:5000/graphql",
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.AIRTABLE_API_KEY,
+        tables: [
+          {
+            baseId: `appmjr4ydBp8PtdOu`,
+            tableName: `Products`,
+            tableView: `Validated products`,
+            mapping: { image: `fileNode` },
+          },
+          {
+            baseId: `appmjr4ydBp8PtdOu`,
+            tableName: `Categories`,
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,
