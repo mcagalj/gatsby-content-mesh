@@ -21,7 +21,7 @@ const GoogleSheetPage = ({ data }) => {
                 {article.date}
               </div>
               {article.selected === "TRUE" ? (
-                <div className="p-0 ml-2 text-center text-xs w-1/12 text-white bg-purple-700 rounded-sm overflow-hidden">
+                <div className="p-0 ml-2 text-center text-xs w-4/12 text-white bg-purple-700 rounded-sm overflow-hidden whitespace-no-wrap overflow-auto">
                   proud of
                 </div>
               ) : null}
