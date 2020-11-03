@@ -11,7 +11,7 @@ const LocalPage = ({ data }) => {
     <Layout>
       <Title>Local content</Title>
       <section className="mb-10 overflow-auto">
-        <h3 className="font-light">Content from YAML files</h3>
+        <h3 className="font-light">Content from JSON files</h3>
         <Table
           headers={[
             { name: "Project", width: "w-auto" },
