@@ -10,14 +10,14 @@ const LocalPage = ({ data }) => {
   return (
     <Layout>
       <Title>Local content</Title>
-      <section className="mb-10">
-        <h3 className="font-light">Content from JSON files</h3>
+      <section className="mb-10 overflow-auto">
+        <h3 className="font-light">Content from YAML files</h3>
         <Table
           headers={[
-            { name: "Project", width: "w-2/12" },
-            { name: "Students", width: "w-3/12" },
-            { name: "Description", width: "w-5/12" },
-            { name: "Links", width: "w-2/12" },
+            { name: "Project", width: "w-auto" },
+            { name: "Students", width: "w-auto" },
+            { name: "Description", width: "w-auto" },
+            { name: "Links", width: "w-auto" },
           ]}
           data={jsonData}
         />
@@ -45,7 +45,7 @@ export const query = graphql`
         image {
           childImageSharp {
             fixed(width: 50) {
-              src
+              ...GatsbyImageSharpFixed
             }
           }
         }
