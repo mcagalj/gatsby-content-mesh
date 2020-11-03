@@ -15,13 +15,13 @@ const AirtablePage = ({ data }) => {
             {product.data.name}
           </h3>
           <p>{product.data.description}</p>
-          <div className="text-center">
+          <div className="text-center overflow-auto">
             <Img fixed={product.data.image.localFiles[0].sharp.fixed} />
           </div>
-          <div className="p-2 text-center w-1/12 text-white bg-purple-700 border rounded-lg overflow-hidden">
+          <div className="p-2 text-center w-auto text-white bg-purple-700 border rounded-lg overflow-hidden">
             {product.data.price} $
           </div>
-          <div className="p-2 text-center w-2/12 text-white bg-orange-500 border rounded-lg overflow-hidden">
+          <div className="p-2 text-center w-auto text-white bg-orange-500 border rounded-lg overflow-hidden">
             {product.data.categories}
           </div>
         </div>

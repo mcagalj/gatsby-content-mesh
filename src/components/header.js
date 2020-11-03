@@ -10,7 +10,7 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>{siteTitle}</h1>
+      <h1 style={{ margin: 0, lineHeight: `3rem` }}>{siteTitle}</h1>
     </div>
   </header>
 )
