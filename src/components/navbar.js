@@ -17,9 +17,9 @@ const Navbar = () => {
 
   const { navbarItems } = data.site.siteMetadata
   return (
-    <ul className="flex mb-4">
+    <ul className="flex flex-no-wrap mb-4 overflow-x-auto">
       {navbarItems.map(item => (
-        <li key={item.text} className="flex-auto">
+        <li key={item.text} className="flex-auto whitespace-no-wrap p-2">
           <Link to={item.path} activeClassName={"active"}>
             {item.text}
           </Link>
