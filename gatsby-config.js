@@ -1,5 +1,23 @@
 require("dotenv").config()
 
+const query = `
+query AirtableProductsQuery {
+  productsTable: allAirtable(filter: { table: { eq: "Products" } }) {
+    products: edges {
+      product: node {
+        id: recordId
+        data {
+          name
+          description
+          price
+          categories
+        }
+      }
+    }
+  }
+}
+`
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Content Mesh by Example`,
@@ -75,17 +93,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-graphql",
-      options: {
-        // Arbitrary name for the remote schema Query type
-        typeName: "POSTGRES",
-        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
-        fieldName: "postgres",
-        // Url to query from
-        url: "http://localhost:5000/graphql",
-      },
-    },
-    {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: process.env.AIRTABLE_API_KEY,
@@ -142,6 +149,32 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-flexsearch",
+      options: {
+        type: "GoogleSpreadsheetArticles",
+        fields: [
+          {
+            name: "title",
+            indexed: true,
+            resolver: "title",
+            attributes: {
+              encode: "balance",
+              tokenize: "forward",
+              threshold: 6,
+              depth: 3,
+            },
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
+            name: "author",
+            indexed: false,
+            resolver: "author",
+            store: true, // In case you want to make the field available in the search results.
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
