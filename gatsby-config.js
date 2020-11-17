@@ -157,6 +157,12 @@ module.exports = {
         type: "GoogleSpreadsheetArticles",
         fields: [
           {
+            name: "id",
+            indexed: false,
+            resolver: "id",
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
             name: "title",
             indexed: true,
             resolver: "title",
@@ -172,6 +178,36 @@ module.exports = {
             name: "author",
             indexed: false,
             resolver: "author",
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
+            name: "date",
+            indexed: true,
+            resolver: "date",
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
+            name: "conference",
+            indexed: false,
+            resolver: "conference",
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
+            name: "journal",
+            indexed: false,
+            resolver: "journal",
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
+            name: "selected",
+            indexed: false,
+            resolver: "selected",
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
+            name: "url",
+            indexed: false,
+            resolver: "url",
             store: true, // In case you want to make the field available in the search results.
           },
         ],

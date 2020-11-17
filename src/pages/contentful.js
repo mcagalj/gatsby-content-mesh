@@ -6,7 +6,6 @@ import Title from "../components/title"
 
 const ContentfulPage = ({ data }) => {
   const { nodes: lecturers } = data.lecturers
-  console.log(lecturers)
   return (
     <Layout>
       <Title>Content from remote source (Contentful)</Title>
