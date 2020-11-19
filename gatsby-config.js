@@ -25,23 +25,23 @@ module.exports = {
     author: `@gatsbyjs`,
     navbar: [
       {
-        text: "Home",
-        path: "/",
+        text: "Blog",
+        path: "/blog",
       },
       {
         text: "Local content",
         path: "/local",
       },
       {
-        text: "Airtable content",
+        text: "Airtable",
         path: "/airtable",
       },
       {
-        text: "Contentful content",
+        text: "Contentful",
         path: "/contentful",
       },
       {
-        text: "Google Sheet content",
+        text: "Google Sheet",
         path: "/google-sheet",
       },
     ],
@@ -78,6 +78,13 @@ module.exports = {
             options: {
               maxWidth: 600,
               linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: "Cobalt2", // Or install your favorite theme from GitHub
+              extensions: ["theme-cobalt2"],
             },
           },
         ],

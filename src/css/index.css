@@ -14,3 +14,7 @@ a:hover,
 a.active {
   @apply text-white bg-purple-700;
 }
+
+.gatsby-resp-image-wrapper {
+  @apply border-l-2 border-purple-600 my-8;
+}
