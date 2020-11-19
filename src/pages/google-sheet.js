@@ -31,8 +31,11 @@ function getSearchResults(query) {
 const DisplayArticles = ({ articles }) =>
   articles.map(article => {
     return (
-      <div key={article.id} className="mb-12">
-        <a href={article.url} className="p-1 pl-0">
+      <div key={article.id} className="mb-12 relative">
+        <a
+          href={article.url}
+          className={`p-1 pl-0 ${article.selected === "TRUE" ? "ml-8" : ""}`}
+        >
           {article.title}
         </a>
         <div>{article.author}</div>
@@ -42,9 +45,7 @@ const DisplayArticles = ({ articles }) =>
             {article.date}
           </div>
           {article.selected === "TRUE" ? (
-            <div className="p-0 ml-2 text-center text-xs w-4/12 text-white bg-purple-700 rounded-sm overflow-hidden whitespace-no-wrap overflow-auto">
-              proud of
-            </div>
+            <div className="absolute top-0 left-0 text-center font-bold text-xs w-5 h-5 text-white bg-purple-800 rounded-sm overflow-hidden whitespace-no-wrap overflow-auto" />
           ) : null}
         </div>
       </div>
@@ -64,11 +65,10 @@ const GoogleSheetPage = ({ data }) => {
 
   const { nodes: articles } = data.articles
   const [query, setQuery] = useState("")
-
   const memoizedYears = useMemo(() => getYears(articles), [articles])
-  const hashMounted = useHasMounted()
+  const hasMounted = useHasMounted()
 
-  if (!hashMounted) {
+  if (!hasMounted) {
     return null
   }
 
@@ -78,7 +78,7 @@ const GoogleSheetPage = ({ data }) => {
     <Layout>
       <Title>Content from remote source (Google Sheet)</Title>
 
-      <div className="my-8 mx-auto sm:w-full md:w-1/2">
+      <div className="my-8 mx-auto sm:w-full md:w-2/3">
         <div className="relative mx-auto my-4 w-full">
           <input
             type="search"
@@ -88,7 +88,7 @@ const GoogleSheetPage = ({ data }) => {
             onChange={event => setQuery(event.target.value)}
           />
           <div
-            className="absolute text-purple-lighter right-0 pr-4 cursor-pointer fill-current text-purple-600"
+            className="absolute text-purple-lighter right-0 pr-4 fill-current text-purple-600"
             style={{
               top: "50%",
               transform: "translateY(-50%)",
