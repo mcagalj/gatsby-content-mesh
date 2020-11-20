@@ -18,7 +18,7 @@ const TestPage = ({ data, params }) => {
 
   return (
     <Layout>
-      <div style={{ width: "70ch" }} className="mx-auto">
+      <div style={{ maxWidth: "70ch" }} className="mx-auto">
         <h1 className="font-semibold mb-1">{title}</h1>
         <h4 className="font-light">Author: {author}</h4>
         <MDXRenderer>{data.post.body}</MDXRenderer>
